@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "golang.go",
+        "mhutchie.git-graph",
+        "catppuccin.catppuccin-vsc-icons",
+        "eamodio.gitlens",
+        "redjue.git-commit-plugin"
+    ]
+}
