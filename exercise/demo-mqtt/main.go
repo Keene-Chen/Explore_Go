@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"time"
 
-	figure "github.com/common-nighthawk/go-figure"
+	"github.com/common-nighthawk/go-figure"
 	mqtt "github.com/eclipse/paho.mqtt.golang"
-	color "github.com/fatih/color"
+	"github.com/fatih/color"
 )
 
 type Message struct {

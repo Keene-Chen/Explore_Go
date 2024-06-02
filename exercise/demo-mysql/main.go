@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/olekukonko/tablewriter"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/olekukonko/tablewriter"
 )
 
 func main() {
@@ -20,7 +20,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer db.Close()
+	defer func(db *sql.DB) {
+		err := db.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}(db)
 
 	// 检查数据库连接是否成功
 	err = db.Ping()
@@ -36,7 +41,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer rows.Close()
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}(rows)
 
 	// 获取列名称
 	columns, err := rows.Columns()
