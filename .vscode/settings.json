@@ -1,0 +1,6 @@
+{
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "*.mod": "${capture}.sum"
+    }
+}
