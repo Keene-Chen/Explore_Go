@@ -1,4 +1,4 @@
-module demo-mqtt
+module demo_mqtt
 
 go 1.22.3
 

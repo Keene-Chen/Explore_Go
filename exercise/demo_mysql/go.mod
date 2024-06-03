@@ -1,4 +1,4 @@
-module demo-mysql
+module demo_mysql
 
 go 1.22.3
 
