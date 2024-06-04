@@ -86,8 +86,4 @@ func main() {
 		fmt.Printf("arr8[%d]: %d ", i, arr8[i])
 	}
 	fmt.Println()
-
-	a, b := 1, 1.1
-	s :=
-		fmt.Println(a + b)
 }
