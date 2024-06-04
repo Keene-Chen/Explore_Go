@@ -8,6 +8,24 @@ import (
 	"sort"
 )
 
+// 定义一个类型DataSlice，用于实现sort.Interface
+type DataSlice1 []Data
+
+// 实现sort.Interface接口的Len方法
+func (d DataSlice1) Len() int {
+	return len(d)
+}
+
+// 实现sort.Interface接口的Less方法
+func (d DataSlice1) Less(i, j int) bool {
+	return d[i].Age < d[j].Age
+}
+
+// 实现sort.Interface接口的Swap方法
+func (d DataSlice1) Swap(i, j int) {
+	d[i], d[j] = d[j], d[i]
+}
+
 func SortJSON1(readFile string, writeFile string) {
 	// 读取JSON文件
 	fdata, err := os.ReadFile(readFile)
@@ -29,7 +47,7 @@ func SortJSON1(readFile string, writeFile string) {
 	}
 
 	// 对数据进行排序
-	sort.Sort(DataSlice(data))
+	sort.Sort(DataSlice1(data))
 
 	// 返回排序后的新数组
 	sortedData := data
