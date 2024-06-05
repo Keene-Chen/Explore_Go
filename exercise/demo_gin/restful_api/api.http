@@ -1,0 +1,14 @@
+### GET
+#GET localhost:8080/ping
+
+### GET
+GET {{host}}/get/user
+
+### POST
+POST {{host}}/post/user
+
+### PUT
+PUT {{host}}/put/user
+
+### DELETE
+DELETE {{host}}/delete/user
