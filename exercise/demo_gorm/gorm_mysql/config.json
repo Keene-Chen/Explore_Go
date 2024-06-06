@@ -1,0 +1,9 @@
+[
+  {
+    "username": "root",
+    "password": "mysql_RQpbdz",
+    "host": "keenechen.cn",
+    "port": 3306,
+    "dbname": "gorm"
+  }
+]
