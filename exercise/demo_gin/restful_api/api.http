@@ -12,3 +12,6 @@ PUT {{host}}/put/user
 
 ### DELETE
 DELETE {{host}}/delete/user
+
+### 
+POST {{host}}/user/list
