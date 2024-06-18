@@ -1,0 +1,16 @@
+{
+  "redis": [
+    {
+      "addr": "keenechen.cn:6379",
+      "username": "",
+      "password": "jhkdjhkjdhsIUTYURTU_4M2nhh",
+      "db": 0
+    },
+    {
+      "addr": "keenechen.cn:6379",
+      "username": "",
+      "password": "jhkdjhkjdhsIUTYURTU_4M2nhh",
+      "db": 1
+    }
+  ]
+}
