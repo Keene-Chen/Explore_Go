@@ -1,7 +1,7 @@
 package service
 
 import (
-	"restful_api/app/model"
+	"Explore_Go/exercise/demo_gin/restful_api/app/model"
 )
 
 // 列表方法

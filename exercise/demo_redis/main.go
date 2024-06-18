@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	str "demo_redis/commands"
-	"demo_redis/config"
+	str "Explore_Go/exercise/demo_redis/commands"
+	"Explore_Go/exercise/demo_redis/config"
 )
 
 var ctx = context.Background()

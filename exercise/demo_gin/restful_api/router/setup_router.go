@@ -1,7 +1,7 @@
 package router
 
 import (
-	_ "restful_api/app/controller"
+	_ "Explore_Go/exercise/demo_gin/restful_api/app/controller"
 
 	ginAutoRouter "github.com/dengshulei/gin-auto-router"
 	"github.com/gin-gonic/gin"

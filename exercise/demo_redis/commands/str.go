@@ -2,7 +2,7 @@ package str
 
 import (
 	"context"
-	"demo_redis/utils"
+	"Explore_Go/exercise/demo_redis/utils"
 	"fmt"
 	"time"
 

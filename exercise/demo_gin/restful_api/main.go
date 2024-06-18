@@ -1,10 +1,10 @@
-package main
+package restful_api
 
 import (
+	"Explore_Go/exercise/demo_gin/restful_api/config"
+	"Explore_Go/exercise/demo_gin/restful_api/router"
 	"encoding/json"
 	"fmt"
-	"restful_api/config"
-	"restful_api/router"
 )
 
 func main() {

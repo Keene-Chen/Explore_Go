@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func Test1(t *testing.T) {
 	var str string = "Beautiful"
 	fmt.Println(str + " World!")
 }

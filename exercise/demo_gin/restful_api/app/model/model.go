@@ -2,7 +2,7 @@ package model
 
 import (
 	"fmt"
-	"restful_api/config"
+	"Explore_Go/exercise/demo_gin/restful_api/config"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

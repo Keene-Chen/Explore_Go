@@ -3,7 +3,7 @@
 // @author KeeneChen <keenechen@qq.com>
 // @since  2024.06.04-10:52:59
 
-package main
+package beautiful_gin
 
 import (
 	"net/http"

@@ -1,11 +1,11 @@
 package controller
 
 import (
+	userService "Explore_Go/exercise/demo_gin/restful_api/app/service"
+	"Explore_Go/exercise/demo_gin/restful_api/util"
 	"encoding/json"
 	"fmt"
 	"net/http"
-	userService "restful_api/app/service"
-	"restful_api/util"
 	"strconv"
 
 	ginAutoRouter "github.com/dengshulei/gin-auto-router"
