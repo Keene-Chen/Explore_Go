@@ -1,8 +1,8 @@
 [
   {
     "username": "root",
-    "password": "mysql_RQpbdz",
-    "host": "keenechen.cn",
+    "password": "xxx",
+    "host": "xxx",
     "port": 3306,
     "dbname": "gorm"
   }

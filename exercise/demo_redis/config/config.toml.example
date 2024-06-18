@@ -1,0 +1,11 @@
+[[redis]]
+addr = "xxx.cn:6379"
+username = ""
+password = "xxx"
+db = 0
+
+[[redis]]
+addr = "xxx.cn:6379"
+username = ""
+password = "xxx"
+db = 1

@@ -27,4 +27,10 @@ go.work
 # fresh
 **/tmp
 
+# config.{toml/ini/yaml/json}
+**/config.toml
+**/config.ini
+**/config.yaml
+**/config.json
+
 # End of https://www.toptal.com/developers/gitignore/api/go
