@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 
+	str "demo_redis/commands"
 	"demo_redis/config"
 )
 
@@ -16,11 +17,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	conf.ConnectInfoServer2(rdb, ctx)
+	// 获取 Redis 连接信息
+	// conf.ConnectInfoServer2(rdb, ctx)
 
 	// 操作 Redis
-	// str.TestStrSet(rdb, ctx)
-	// str.TestStrGet(rdb, ctx)
+	// str.TestSet(rdb, ctx)
+	// str.TestGet(rdb, ctx)
+	// str.TestIncDec(rdb, ctx)
+	// str.TestAppend(rdb, ctx)
+	str.TestRateLimiter(rdb, ctx)
 
 	// 关闭连接
 	defer rdb.Close()
