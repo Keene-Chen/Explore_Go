@@ -2,8 +2,6 @@ package main
 
 import (
 	"Explore_Go/exercise/demo_jwt/utils"
-	"crypto/x509"
-	"encoding/pem"
 	"fmt"
 	"os"
 	"time"
@@ -12,6 +10,7 @@ import (
 )
 
 func main() {
+	jwtService := utils.JWTService{}
 	// 通用JWT实现,使用HS256签名算法
 	userJWT := &utils.UserJWT{
 		Username: "admin",
@@ -21,13 +20,13 @@ func main() {
 			NotBefore: jwt.NewNumericDate(time.Now()),
 		},
 	}
-	t, err := userJWT.GenerateJWT(userJWT, "hello")
+	t, err := jwtService.GenerateJWT(userJWT, "hello")
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(t)
 
-	claims, err := userJWT.ParseJWT(t, "hello")
+	claims, err := jwtService.ParseJWT(t, "hello")
 	if err != nil {
 		panic(err)
 	}
@@ -41,11 +40,7 @@ func main() {
 	}
 
 	// 解析私钥
-	block, _ := pem.Decode(privateKeyBytes)
-	if block == nil || block.Type != "EC PRIVATE KEY" {
-		panic("failed to decode PEM block containing private key")
-	}
-	privateKey, err := x509.ParseECPrivateKey(block.Bytes)
+	privateKey, err := jwt.ParseECPrivateKeyFromPEM(privateKeyBytes)
 	if err != nil {
 		panic(err)
 	}
@@ -53,13 +48,13 @@ func main() {
 	// 解析公钥
 	publicKey := &privateKey.PublicKey
 
-	t1, err := userJWT.GenerateECDSAJWT(userJWT, privateKey)
+	t1, err := jwtService.GenerateECDSAJWT(userJWT, privateKey)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(t1)
 
-	claims1, err := userJWT.ParseECDSAJWT(t1, publicKey)
+	claims1, err := jwtService.ParseECDSAJWT(t1, publicKey)
 	if err != nil {
 		panic(err)
 	}

@@ -12,19 +12,21 @@ type JWTGeneric interface {
 	ParseECDSAJWT(tokenstr string, key *ecdsa.PublicKey) (any, error)
 }
 
+type JWTService struct{}
+
 type UserJWT struct {
 	Username             string `json:"username"`
 	jwt.RegisteredClaims        // v5版本新加的方法
 }
 
-func (u *UserJWT) GenerateJWT(userJWT *UserJWT, secretKey string) (string, error) {
+func (j JWTService) GenerateJWT(userJWT *UserJWT, secretKey string) (string, error) {
 	//	使用HS256签名算法
 	t := jwt.NewWithClaims(jwt.SigningMethodHS256, userJWT)
 	s, err := t.SignedString([]byte(secretKey))
 	return s, err
 }
 
-func (u *UserJWT) ParseJWT(tokenstr, secretKey string) (*UserJWT, error) {
+func (j JWTService) ParseJWT(tokenstr, secretKey string) (*UserJWT, error) {
 	t, err := jwt.ParseWithClaims(tokenstr, &UserJWT{}, func(token *jwt.Token) (any, error) {
 		return []byte(secretKey), nil
 	})
@@ -41,13 +43,13 @@ type MapJWT struct {
 	jwt.MapClaims        // v4版本的方法
 }
 
-func (m *MapJWT) GenerateMapJWT(mapJWT *MapJWT, secretKey string) (string, error) {
+func (j JWTService) GenerateMapJWT(mapJWT *MapJWT, secretKey string) (string, error) {
 	t := jwt.NewWithClaims(jwt.SigningMethodHS256, mapJWT)
 	s, err := t.SignedString([]byte(secretKey))
 	return s, err
 }
 
-func (m *MapJWT) ParseMapJWT(tokenstr, secretKey string) (*MapJWT, error) {
+func (j JWTService) ParseMapJWT(tokenstr, secretKey string) (*MapJWT, error) {
 	t, err := jwt.ParseWithClaims(tokenstr, &MapJWT{}, func(token *jwt.Token) (any, error) {
 		return []byte(secretKey), nil
 	})
@@ -59,7 +61,7 @@ func (m *MapJWT) ParseMapJWT(tokenstr, secretKey string) (*MapJWT, error) {
 	}
 }
 
-func (u *UserJWT) GenerateECDSAJWT(userJWT *UserJWT, key *ecdsa.PrivateKey) (string, error) {
+func (j JWTService) GenerateECDSAJWT(userJWT *UserJWT, key *ecdsa.PrivateKey) (string, error) {
 	// 使用ES256签名算法
 	t := jwt.NewWithClaims(jwt.SigningMethodES256, userJWT)
 	s, err := t.SignedString(key)
@@ -67,7 +69,7 @@ func (u *UserJWT) GenerateECDSAJWT(userJWT *UserJWT, key *ecdsa.PrivateKey) (str
 	return s, err
 }
 
-func (u *UserJWT) ParseECDSAJWT(tokenstring string, key *ecdsa.PublicKey) (*UserJWT, error) {
+func (j JWTService) ParseECDSAJWT(tokenstring string, key *ecdsa.PublicKey) (*UserJWT, error) {
 	t, err := jwt.ParseWithClaims(tokenstring, &UserJWT{}, func(token *jwt.Token) (any, error) {
 		return key, nil
 	})
