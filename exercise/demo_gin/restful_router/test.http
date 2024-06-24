@@ -1,0 +1,11 @@
+### ping
+GET {{hosts}}/ping
+
+### user login
+GET {{url}}/user/login
+
+### user register
+POST {{url}}/user/register
+
+### weather realtime
+GET {{url}}/weather/pKdvHBO6KHBFo3DR/116.4074,39.9042/realtime
