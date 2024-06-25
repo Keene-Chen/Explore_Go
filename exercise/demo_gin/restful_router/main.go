@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Explore_Go/exercise/demo_gin/restful_router/router"
+	"Explore_Go/exercise/demo_gin/restful_router/internal/router"
 	"path/filepath"
 
 	"github.com/gin-gonic/gin"

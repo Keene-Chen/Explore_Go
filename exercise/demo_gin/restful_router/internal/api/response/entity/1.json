@@ -1,0 +1,70 @@
+{
+  "status": "ok", // 返回状态  
+  "api_version": "v2.6", // API 版本
+  "api_status": "active", // API 服务状态
+  "lang": "zh_CN", // 返回语言
+  "unit": "metric", // 单位
+  "tzshift": 28800, // 时区偏移
+  "timezone": "Asia/Shanghai", // 时区
+  "server_time": 1640745758,
+  "location": [
+    39.2072,
+    101.6656
+  ],
+  "result": {
+    "realtime": {
+      "status": "ok",
+      "temperature": -7, // 地表 2 米气温
+      "humidity": 0.58, // 地表 2 米湿度相对湿度(%)
+      "cloudrate": 0, // 总云量(0.0-1.0)
+      "skycon": "CLEAR_DAY", // 天气现象
+      "visibility": 7.8, // 地表水平能见度
+      "dswrf": 47.7, // 向下短波辐射通量(W/M2)
+      "wind": {
+        "speed": 1.8, // 地表 10 米风速
+        "direction": 22 // 地表 10 米风向
+      },
+      "pressure": 85583.47, // 地面气压
+      "apparent_temperature": -9.9, // 体感温度
+      "precipitation": {
+        "local": {
+          "status": "ok",
+          "datasource": "radar",
+          "intensity": 0 // 本地降水强度
+        },
+        "nearest": {
+          "status": "ok",
+          "distance": 10000, // 最近降水带与本地的距离
+          "intensity": 0 // 最近降水处的降水强度
+        }
+      },
+      "air_quality": {
+        "pm25": 45, // PM25 浓度(μg/m3)
+        "pm10": 49, // PM10 浓度(μg/m3)
+        "o3": 6, // 臭氧浓度(μg/m3)
+        "so2": 8, // 二氧化硫浓度(μg/m3)
+        "no2": 42, // 二氧化氮浓度(μg/m3)
+        "co": 1.1, // 一氧化碳浓度(mg/m3)
+        "aqi": {
+          "chn": 63, // 国标 AQI
+          "usa": 124
+        },
+        "description": {
+          "chn": "良",
+          "usa": "轻度污染"
+        }
+      },
+      "life_index": {
+        "ultraviolet": {
+          "index": 3,
+          "desc": "弱" // 参见 [生活指数](tables/lifeindex)
+        },
+        "comfort": {
+          "index": 12,
+          "desc": "湿冷" // 参见 [生活指数](tables/lifeindex)
+        }
+      }
+    },
+    "primary": 0
+  }
+}
